@@ -25,3 +25,4 @@ Phase One focuses on building the foundation: all customer‑facing pages, a con
 - **HTML** with semantic structure and valid markup
 - **CSS** for a custom, responsive sneaker‑themed design using two distinct fonts and a consistent color palette
 - **JavaScript (ES6)** might need, if include, i should put in phase two
+(processing)

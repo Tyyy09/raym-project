@@ -24,5 +24,11 @@ Phase One focuses on building the foundation: all customer‑facing pages, a con
 - **MySQL** for storing admin accounts and sneaker product data
 - **HTML** with semantic structure and valid markup
 - **CSS** for a custom, responsive sneaker‑themed design using two distinct fonts and a consistent color palette
-- **JavaScript (ES6)** might need, if include, i should put in phase two
-(processing)
+- **JavaScript** might need, if include, i should put in phase two
+Phase Two
+- Expanded **PHP functionality** for dynamic content
+- Completed **shopping page** with product listings and grid layout
+- Began **backend development** with admin dashboard features (add, edit, delete sneakers)
+- Improved **responsive design**: hero and banner images now display full‑screen on small devices
+- Phase One: **Completed** (Frontend + Database foundation)
+- Phase Two: **Completed** (Responsive navigation, shopping page, backend start)

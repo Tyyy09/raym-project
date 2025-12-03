@@ -15,19 +15,20 @@
 </head>
 <body>
 <header class="site-header">
-    <!-- Logo -->
     <div class="logo">
         <a href="index.php">
-            <img src="images/logo.png" alt="Raym Sneaker">
+            <img src="images/logo.png" alt="Raym Sneaker Store Logo">
         </a>
     </div>
-
-    <!-- Navigation -->
-    <nav class="nav">
+    <nav class="site-nav">
         <a href="index.php">Home</a>
         <a href="about.php">About Us</a>
         <a href="shop.php">Shop</a>
         <a href="contact.php">Contact</a>
-        <a href="login.php">Admin</a>
     </nav>
+
+    <div class="login-nav">
+        <a href="login.php">Login</a>
+    </div>
+
 </header>

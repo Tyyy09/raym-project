@@ -13,7 +13,7 @@ include 'includes/header.php';
 
         <h1>About Us</h1>
         <p>
-            At <strong>Raym</strong>, sneakers are more than just shoes — they’re a lifestyle.
+            At <strong>Raym</strong>, sneakers are more than just shoes, they’re a lifestyle.
             Our mission is to bring the latest drops and timeless classics to sneakerheads everywhere,
             blending style, comfort, and culture.
         </p>

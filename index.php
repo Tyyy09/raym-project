@@ -29,7 +29,7 @@ include __DIR__ . '/includes/header.php';
                 <div class="card-content">
                     <h3>Nike Air Max</h3>
                     <p class="price">$180.00 CAD</p>
-                    <a href="product.php?slug=nike-air-max" class="btn">View Product</a>
+                    <a href="#" class="btn">View Product</a>
                 </div>
             </article>
 

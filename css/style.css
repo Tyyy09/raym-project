@@ -711,7 +711,7 @@ h1,h2,h3,h4,h5{
 .shop-banner {
     position: relative;
     height: 80vh;
-    background: url('../images/assets/banner3.jpg') no-repeat center center;
+    background: url('../images/assets/hero-bg.jpg') no-repeat center center;
     background-size: cover;
     font-family: var(--font-heading);
     display: flex;

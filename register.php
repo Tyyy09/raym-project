@@ -1,19 +1,16 @@
 <?php
 session_start();
 
-// Correct relative path — adjust depending on where Database.php is
-include __DIR__ . '/backend/Database.php';
+require __DIR__ . '/backend/Database.php';
 
 $title = "Admin Registration – Raym Sneaker Store";
 $description = "Create a new admin account for the Raym Sneaker Store dashboard.";
-include __DIR__ . '/includes/header.php';
 
 $conn = Database::getInstance()->getConnection();
 $error = "";
 $success = "";
 
-
-// Handle form submission
+// Handle form submission BEFORE including header.php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name     = trim($_POST['name']);
     $email    = trim($_POST['email']);
@@ -26,16 +23,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
         try {
-            $stmt = $conn->prepare("INSERT INTO admins (name, email, password_hash) 
-                                    VALUES (:name, :email, :password_hash)");
+            $stmt = $conn->prepare("
+                INSERT INTO admins (name, email, password_hash)
+                VALUES (:name, :email, :password_hash)
+            ");
+
             $stmt->execute([
-                    ':name' => $name,
-                    ':email' => $email,
-                    ':password_hash' => $password_hash
+                ':name' => $name,
+                ':email' => $email,
+                ':password_hash' => $password_hash
             ]);
-            // Redirect to login after success
+
+            // Redirect BEFORE any HTML is sent
             header("Location: login.php?registered=1");
             exit;
+
         } catch (PDOException $e) {
             if ($e->getCode() == 23000) {
                 $error = "Email already exists.";
@@ -45,6 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+// Only include header AFTER redirect logic
+include __DIR__ . '/includes/header.php';
 ?>
 
 <main id="main">
@@ -53,10 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>Fill out the form below to create your admin account.</p>
 
         <?php if (!empty($error)): ?>
-            <p class="alertWrong"><?php echo htmlspecialchars($error) ?></p>
+            <p class="alertWrong"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
+
         <?php if (!empty($success)): ?>
-            <p class="alertCorrect"><?php echo htmlspecialchars($success) ?></p>
+            <p class="alertCorrect"><?= htmlspecialchars($success) ?></p>
         <?php endif; ?>
 
         <form class="register-form" action="register.php" method="post">
@@ -81,4 +87,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php include __DIR__ . '/includes/footer.php'; ?>

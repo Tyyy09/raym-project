@@ -12,11 +12,18 @@ Raym Sneaker Store
 
     --font-heading: "GC arturm Demo SemBd", sans-serif;
     --font-body: "Roboto", sans-serif;
-    --border-radius: 12px;
     --space-xs: 0.5rem;
     --space-sm: 1rem;
     --space-md: 2rem;
     --space-lg: 3rem;
+
+    /* Radius scale */
+--radius-xs: 4px;
+--radius-sm: 8px;
+--radius-md: 12px;   /* your current default */
+--radius-lg: 20px;
+--radius-full: 999px; /* for pills/circles */
+
 }
 
 /* Reset and base styles */
@@ -1426,4 +1433,35 @@ RESPONSIVE
     .contact-grid {
         grid-template-columns: 1fr;
     }
+}
+/* Global radius defaults */
+img,
+button,
+input,
+textarea,
+select,
+.card,
+.card-image,
+.card-content,
+.login-form,
+.register-form,
+.form-container,
+.shoe-grid figure,
+.product-image img,
+.contact-info,
+.contact-form {
+    border-radius: var(--radius-md);
+}
+
+/* Small radius elements */
+input,
+textarea,
+select {
+    border-radius: var(--radius-sm);
+}
+
+/* Full pill shapes */
+.newsletter-form input,
+.newsletter-form button {
+    border-radius: var(--radius-full);
 }

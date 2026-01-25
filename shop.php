@@ -16,6 +16,7 @@ $sneakers = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- Banner Section -->
     <section class="shop-banner">
         <div class="banner-content">
+            
             <h1>Step Into Style</h1>
             <p>Discover the latest sneakers from Adidas, Nike, and more.</p>
             <a href="#sneaker-grid" class="btn btn-large">Shop Now</a>
